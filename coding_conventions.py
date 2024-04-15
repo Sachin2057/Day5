@@ -21,7 +21,7 @@ def add_students(student_id, name,
         Grade of student
     """
     if not os.path.exists("student_record.json"):
-        data=[]
+        data = []
         with open("student_record.json", 'w', encoding='utf-8') as f:
             data.append({"ID":student_id,"Name":name,"Age":age,"Grade":grade})
             json.dump(data,f,indent=4)
@@ -29,7 +29,7 @@ def add_students(student_id, name,
     else:
         try:
             with open("student_record.json","r",encoding="utf-8") as f:
-                data=json.load(f)
+                data = json.load(f)
                 print(data)
                 print(type(data))
                 logging.info("Record opened sucessfully")
@@ -70,13 +70,13 @@ def search_student(key):
             f.close()
         if isinstance(key, int):
             for i in data:
-                if i["ID"]==key:
+                if i["ID"] == key:
                     return f"Age:{i['Age']},Grade:{i['Grade']}"
             logging.info("Student not found")
             return None
         elif isinstance(key, str):
             for i in data:
-                if i["Name"]==key:
+                if i["Name"] == key:
                     return f"Age:{i['Age']},Grade:{i['Grade']}"
             logging.info("Student not found")
             return None
@@ -102,7 +102,7 @@ def update_student(key, age=None, grade=None):
     """
     try:
         with open("student_record.json","r",encoding="utf-8") as f:
-            data=json.load(f)
+            data = json.load(f)
             logging.info("Record opened sucessfully")
             logging.debug(data)
             f.close()
@@ -111,9 +111,9 @@ def update_student(key, age=None, grade=None):
                 for i in data:
                     if i["ID"]==key:
                         if age:
-                            i["ID"]=age
+                            i["ID"] = age
                         if grade:
-                            i["Grade"]=grade
+                            i["Grade"] = grade
                 logging.info("Student not found")
             elif isinstance(key,str):
                 for i in data:

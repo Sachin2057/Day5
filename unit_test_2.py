@@ -19,7 +19,6 @@ class TestCalculaion(unittest.TestCase):
         self.assertAlmostEqual(first_result["median"],1.0)
         self.assertAlmostEqual(first_result["std"],0.0)
     
-    
     def test_multiple_element(self):
         result=calculation([1,2,3])
         self.assertAlmostEqual(result["mean"],2.0)
