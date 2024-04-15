@@ -46,7 +46,8 @@ def add_students(student_id, name,
             print("Error occurend %s",e)
         except Exception as e:
             print("Error occured %s",e)
-
+            
+            
 def search_student(key):
     """
     Search student by name and id
@@ -84,7 +85,8 @@ def search_student(key):
             return None
     except Exception as e:
         print(f"Exception occured {e}")
-        
+
+
 def update_student(key, age=None, grade=None):
     """
     Update_student record
@@ -129,8 +131,10 @@ def update_student(key, age=None, grade=None):
             print("Invalid format")
     except Exception as e:
         print(f"Exception occured {e}")
-add_students(123,"Sachin",22,89.0)
-add_students(124,"Anup",22,89.0)
-add_students(154,"Pragyan",23,90.0)
-print(search_student(123))
-print(update_student(123,26,95.0))
+        
+if __name__=="main":
+    add_students(123,"Sachin",22,89.0)
+    add_students(124,"Anup",22,89.0)
+    add_students(154,"Pragyan",23,90.0)
+    print(search_student(123))
+    print(update_student(123,26,95.0))

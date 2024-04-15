@@ -1,0 +1,61 @@
+INFO:root:File not found. Created a new file.
+ERROR:root:Error occured I/O operation on closed file.
+ERROR:root:Error occured cannot access local variable 'data' where it is not associated with a value
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+ERROR:root:Error occured I/O operation on closed file.
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+ERROR:root:Error occured I/O operation on closed file.
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+ERROR:root:Error occured I/O operation on closed file.
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+ERROR:root:Error occured I/O operation on closed file.
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+ERROR:root:Error occured I/O operation on closed file.
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+ERROR:root:Error occured I/O operation on closed file.
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Record opened sucessfully
+INFO:root:Student not found
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Logging successfull
+INFO:root:Record opened sucessfully
+INFO:root:Record opened sucessfully
+INFO:root:Student not found
+INFO:root:Update successfull
