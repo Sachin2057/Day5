@@ -2,10 +2,12 @@ import json
 import logging
 import os
 
-logging.basicConfig(filename="logs\\coding_conventions.logs",level=logging.INFO)
+logging.basicConfig(
+    filename="logs\\coding_conventions.logs", level=logging.INFO)
+
 
 def add_students(student_id, name,
-                 age,grade):
+                 age, grade):
     """
     Function to add student record
 
@@ -23,31 +25,33 @@ def add_students(student_id, name,
     if not os.path.exists("student_record.json"):
         data = []
         with open("student_record.json", 'w', encoding='utf-8') as f:
-            data.append({"ID":student_id,"Name":name,"Age":age,"Grade":grade})
-            json.dump(data,f,indent=4)
+            data.append({"ID": student_id, "Name": name,
+                        "Age": age, "Grade": grade})
+            json.dump(data, f, indent=4)
             logging.info("Logging successfull")
     else:
         try:
-            with open("student_record.json","r",encoding="utf-8") as f:
+            with open("student_record.json", "r", encoding="utf-8") as f:
                 data = json.load(f)
                 print(data)
                 print(type(data))
                 logging.info("Record opened sucessfully")
                 logging.debug(data)
-            data.append({"ID":student_id,"Name":name,"Age":age,"Grade":grade})
+            data.append({"ID": student_id, "Name": name,
+                        "Age": age, "Grade": grade})
             print(data)
         except FileNotFoundError:
             print("File not found to open for adding")
         try:
-            with open(file="student_record.json",mode="w",encoding="utf-8") as f:
-                json.dump(data,f,indent=4)
+            with open(file="student_record.json", mode="w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4)
                 logging.info("Logging successfull")
         except FileNotFoundError as e:
-            print("Error occurend %s",e)
+            print("Error occurend %s", e)
         except Exception as e:
-            print("Error occured %s",e)
-            
-            
+            print("Error occured %s", e)
+
+
 def search_student(key):
     """
     Search student by name and id
@@ -63,8 +67,8 @@ def search_student(key):
         Age and grade of student if found else None
     """
     try:
-        with open("student_record.json","r",encoding="utf-8") as f:
-            data=json.load(f)
+        with open("student_record.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
             logging.info("Record opened sucessfully")
             logging.debug(data)
             f.close()
@@ -101,40 +105,41 @@ def update_student(key, age=None, grade=None):
         Grade to update, by default None
     """
     try:
-        with open("student_record.json","r",encoding="utf-8") as f:
+        with open("student_record.json", "r", encoding="utf-8") as f:
             data = json.load(f)
             logging.info("Record opened sucessfully")
             logging.debug(data)
             f.close()
-        if(isinstance(key,int) or isinstance(key,str)):
-            if isinstance(key,int):
+        if (isinstance(key, int) or isinstance(key, str)):
+            if isinstance(key, int):
                 for i in data:
-                    if i["ID"]==key:
+                    if i["ID"] == key:
                         if age:
                             i["ID"] = age
                         if grade:
                             i["Grade"] = grade
                 logging.info("Student not found")
-            elif isinstance(key,str):
+            elif isinstance(key, str):
                 for i in data:
-                    if i["ID"]==key:
+                    if i["ID"] == key:
                         if age:
-                            i["Age"]=age
+                            i["Age"] = age
                         if grade:
-                            i["Grade"]=grade
+                            i["Grade"] = grade
                 logging.info("Student not found")
-            with open(file="student_record.json",mode="w",encoding="utf-8") as f:
-                json.dump(data,f)
+            with open(file="student_record.json", mode="w", encoding="utf-8") as f:
+                json.dump(data, f)
                 logging.info("Update successfull")
                 f.close()
         else:
             print("Invalid format")
     except Exception as e:
         print(f"Exception occured {e}")
-        
-if __name__=="main":
-    add_students(123,"Sachin",22,89.0)
-    add_students(124,"Anup",22,89.0)
-    add_students(154,"Pragyan",23,90.0)
+
+
+if __name__ == "main":
+    add_students(123, "Sachin", 22, 89.0)
+    add_students(124, "Anup", 22, 89.0)
+    add_students(154, "Pragyan", 23, 90.0)
     print(search_student(123))
-    print(update_student(123,26,95.0))
+    print(update_student(123, 26, 95.0))

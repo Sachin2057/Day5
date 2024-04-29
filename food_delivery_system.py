@@ -3,6 +3,7 @@ class FoodItem:
         self.name = name
         self.price = price
 
+
 class Restaurant:
     def __init__(self, name):
         self.name = name
@@ -29,6 +30,7 @@ class Restaurant:
             total_revenue += food_item.price * quantity
         return total_revenue
 
+
 class Customer:
     def __init__(self, name, address):
         self.name = name
@@ -53,6 +55,7 @@ class Customer:
         else:
             print(f"{food_item.name} not found in the cart.")
 
+
 class DeliveryService:
     def __init__(self):
         self.restaurants = []
@@ -65,6 +68,7 @@ class DeliveryService:
             if restaurant.name == name:
                 return restaurant
         return None
+
 
 # Test the food delivery system
 restaurant1 = Restaurant("Tasty Bites")
@@ -85,13 +89,16 @@ customer.add_to_cart(food_item1, 2)
 customer.add_to_cart(food_item2, 3)
 customer.add_to_cart(food_item3, -2)  # Bug: This should print an error message
 
+
 delivery_service = DeliveryService()
 delivery_service.add_restaurant(restaurant1)
 delivery_service.add_restaurant(restaurant2)
 
-restaurant1.remove_from_menu(food_item2, 6)  # Bug: This should print an error message
+# Bug: This should print an error message
+restaurant1.remove_from_menu(food_item2, 6)
 
-restaurant2.remove_from_menu(food_item1, 1)  # Bug: This should print an error message
+# Bug: This should print an error message
+restaurant2.remove_from_menu(food_item1, 1)
 
 print("Total revenue for Tasty Bites:", restaurant1.get_total_revenue())
 print("Total revenue for Spice Delight:", restaurant2.get_total_revenue())

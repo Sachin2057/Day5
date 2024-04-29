@@ -13,6 +13,7 @@ class University:
         Location
         Department
     """
+
     def __init__(self, name, location):
         self.__name = name
         self.__location = location
@@ -80,8 +81,8 @@ class Departments(University):
         try:
             for i in courses:
                 self.courses.append(i)
-        except Exception as e:
-            logging.error("Invalid format of list")
+        except Exception as exception:
+            logging.error("Invalid format of list %s", exception)
 
     def add_course(self, course):
         """
@@ -98,9 +99,9 @@ class Departments(University):
         """
         Display university information
         """
-        universityName, location=super().get_info()
+        university_name, location = super().get_info()
         logging.info("---Department info---")
-        logging.info("University:%s", universityName)
+        logging.info("University:%s", university_name)
         logging.info("Locaion:%s", location)
         logging.info("Department Name:%s", self.name)
         logging.info("The courses of the deaprtment are:")
@@ -109,12 +110,12 @@ class Departments(University):
 
 
 engineering = Departments(
-                    "MIT", "Massachusetts",
-                    "Engineering", ["Computer", "Mechanical"])
+    "MIT", "Massachusetts",
+    "Engineering", ["Computer", "Mechanical"])
 engineering.add_course("Eectronics")
 appliedScience = Departments(
-                    "MIT", "Massachusetts",
-                    "Applied Science", ["Pysics", "Chemistry"])
+    "MIT", "Massachusetts",
+    "Applied Science", ["Pysics", "Chemistry"])
 university = University("MIT", "Massachusetts")
 university.set_departments(engineering)
 university.set_departments(appliedScience)
